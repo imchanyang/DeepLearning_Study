@@ -18,7 +18,7 @@ model = tf.keras.models.Sequential([
     # 활성홤수를 넣는다 activation
     tf.keras.layers.Dense(64, activation='tanh'),
     tf.keras.layers.Dense(128, activation='tanh'),
-    # 에측결과 0~1사이로 출력하기 위해서 (확률)
+    # 예측결과 0~1사이로 출력하기 위해서 (확률)
     tf.keras.layers.Dense(1, activation='sigmoid')
 ])
 
@@ -49,8 +49,6 @@ x데이터 = []
 # data.iterrows() data라는 데이터 프레임을 가로 한줄씩 출력(행)
 for i, rows in data.iterrows():
    x데이터.append([rows['gre'], rows['gpa'], rows['rank']])
-
-
 
 # 학습
 # x데이터 : gre, gpa, rank y데이터 : 합불
